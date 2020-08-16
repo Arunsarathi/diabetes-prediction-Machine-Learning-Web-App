@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Diabetes Prediction Analysis</h1>
+    <form action="{{url_for('predict')}}" method="post">
+        <input type="text" name="num_preg" placeholder="num_preg" required="required">
+        <input type="text" name="glucose_conc" placeholder="glucose_conc" required="required">
+        <input type="text" name="diastolic_bp" placeholder="diastolic_bp" required="required">
+        <input type="text" name="insulin" placeholder="insulin" required="required">
+        <input type="text" name="bmi" placeholder="bmi" required="required">
+        <input type="text" name="diab_pred" placeholder="diab_pred" required="required">
+        <input type="text" name="age" placeholder="age" required="required">
+        <input type="text" name="skin" placeholder="skin" required="required">
+        <button type="submit" class="btn btn-primary btn-block btn-large">predict</button>
+    </form>
+    <br>
+    <br>
+  
+    {{ prediction_text }}
+    <br>
+
+
+</body>
+</html>
